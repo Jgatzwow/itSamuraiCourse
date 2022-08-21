@@ -10,21 +10,13 @@ type PropsType = {
 
 const Accordion = (props: PropsType) => {
     const  {title, collapsedMenu} = props
-    if (!collapsedMenu) {
-        return (
-            <div>
-                <AccordionTitle title={title}/>
-                <AccordionBody/>
-            </div>
-        )
-    } else {
-        return (
-            <div>
-                <AccordionTitle title={title}/>
-            </div>
-        )
-    }
 
+        return (
+            <div>
+                <AccordionTitle title={title}/>
+                {!collapsedMenu &&  <AccordionBody/> }
+            </div>
+        )
 }
 
 export default Accordion
