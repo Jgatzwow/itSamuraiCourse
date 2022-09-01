@@ -2,33 +2,27 @@ import React, {useState} from 'react';
 import Star from './star/Star';
 
 
-type PropsType = {
-    value: number
-}
-
-const Rating = (props: PropsType) => {
+const Rating = () => {
 
     const [value, setValue] = useState(0)
 
-    const rateApp = (value: number) => {
+    const rateAppHandler = (value:number) => {
         setValue(value)
     }
+
     return (
         <div>
-            <Star selected={value > 0}/>
-            <button onClick={() => rateApp(1)}>1</button>
+            <Star callback={() => rateAppHandler(1)} selected={value > 0}/>
 
-            <Star selected={value > 1}/>
-            <button onClick={() => rateApp(2)}>2</button>
+            <Star callback={() => rateAppHandler(2)} selected={value > 1}/>
 
-            <Star selected={value > 2}/>
-            <button onClick={() => rateApp(3)}>3</button>
 
-            <Star selected={value > 3}/>
-            <button onClick={() => {rateApp(4)}}>4</button>
+            <Star callback={() => rateAppHandler(3)} selected={value > 2}/>
 
-            <Star selected={value > 4}/>
-            <button onClick={() => {rateApp(5)}}>5</button>
+
+            <Star callback={() => rateAppHandler(4)} selected={value > 3}/>
+
+            <Star callback={() => rateAppHandler(5)} selected={value > 4}/>
 
         </div>
     )

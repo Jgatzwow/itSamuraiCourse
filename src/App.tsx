@@ -11,11 +11,8 @@ const App = () => {
             <PageTitle title={'My Friends'}/>
 
             <OnOff/>
-            <OnOff/>
-            <OnOff/>
             <Accordion title={'Accordion Title'}/>
-            <Accordion title={'Accordion Title'}/>
-            <Rating value={2}/>
+            <Rating />
 
             {/*<Rating value={0}/>
             <Rating value={1}/>

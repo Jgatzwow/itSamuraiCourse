@@ -13,14 +13,14 @@ const Accordion = (props: PropsType) => {
 
     const [collapsed, setCollapsed] = useState(true)
 
-    const toggleMenu = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    const toggleMenu = (collapsed: boolean) => {
         setCollapsed(!collapsed)
     }
 
     return (
         <div>
-            <AccordionTitle title={title}/>
-            <button onClick={toggleMenu}>toggleMenu</button>
+            <AccordionTitle callback={()=> {toggleMenu(collapsed)}} title={title}/>
+
             {!collapsed && <AccordionBody/>}
         </div>
     )

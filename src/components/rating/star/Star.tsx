@@ -1,15 +1,18 @@
-import React from "react";
+import React from 'react';
 
 type PropsType = {
     selected: boolean
+    callback: () => void
 }
 
 const Star = (props: PropsType) => {
-    if (props.selected === true) {
-        return <span> <b>star </b></span>
-    } else {
-        return <span> star</span>
-    }
+    const {selected, callback} = props
+
+    return (
+        selected
+            ? <span onClick={callback}> <b>star </b></span>
+            : <span onClick={callback}> star</span>
+    )
 
 }
 
