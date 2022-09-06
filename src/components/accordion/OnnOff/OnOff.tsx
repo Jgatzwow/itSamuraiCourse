@@ -8,7 +8,7 @@ export const OnOff = (props: PropsType) => {
     /*const {on} = props*/
     const [on, setOn] = useState(true)
 
-    const changeStatus = (e: React.MouseEvent<HTMLDivElement>) => {
+    const changeStatus = () => {
         setOn(!on)
     }
 
@@ -18,8 +18,14 @@ export const OnOff = (props: PropsType) => {
         border: '1px solid black',
         display: 'inline-block',
         padding: '2px',
-        backgroundColor: on ? 'green' : 'white'
+        backgroundColor: on ? 'green' : 'white',
+        cursor: 'pointer',
+
+        'div:hover': {
+            backgroundColor: 'orange',
+        }
     }
+
     const offStyle = {
         width: '30px',
         height: '20px',
@@ -36,8 +42,10 @@ export const OnOff = (props: PropsType) => {
         border: '1px solid black',
         display: 'inline-block',
         marginLeft: '5px',
-        backgroundColor: on ? 'green' : 'red'
+        backgroundColor: on ? 'green' : 'red',
     }
+
+
     return (
         <div>
             <div onClick={changeStatus} style={onStyle}>Onn</div>

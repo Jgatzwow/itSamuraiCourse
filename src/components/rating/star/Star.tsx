@@ -9,9 +9,9 @@ const Star = (props: PropsType) => {
     const {selected, callback} = props
 
     return (
-        selected
-            ? <span onClick={callback}> <b>star </b></span>
-            : <span onClick={callback}> star</span>
+        <span onClick={callback}>
+        {selected ? <b>star </b> : ' star '}
+    </span>
     )
 
 }
