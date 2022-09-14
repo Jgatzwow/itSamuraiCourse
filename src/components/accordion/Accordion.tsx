@@ -2,13 +2,12 @@ import React, {useState} from 'react';
 import AccordionTitle from './accordionTitle/AccordionTitle';
 import AccordionBody from './accordionBody/AccordionBody';
 
-type PropsType = {
+export type AccordionPropsType = {
     title: string
-
 }
 
 
-const Accordion = (props: PropsType) => {
+const Accordion = (props: AccordionPropsType) => {
     const {title} = props
 
     const [collapsed, setCollapsed] = useState(true)

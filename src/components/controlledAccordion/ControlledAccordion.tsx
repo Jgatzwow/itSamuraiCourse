@@ -3,14 +3,14 @@ import AccordionTitle from '../accordion/accordionTitle/AccordionTitle';
 import AccordionBody from '../accordion/accordionBody/AccordionBody';
 
 
-type PropsType = {
+type ControlledAccordionPropsType = {
     title: string
     collapsed: boolean
     toggleMenu: (collapsed: boolean) => void
 }
 
 
-const ControlledAccordion = (props: PropsType) => {
+const ControlledAccordion = (props: ControlledAccordionPropsType) => {
     const {title,collapsed,toggleMenu} = props
 
 

@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import Star from './star/Star';
 
 
-const Rating = () => {
+export const Rating = () => {
 
     const [value, setValue] = useState(0)
 
@@ -29,4 +29,3 @@ const Rating = () => {
 
 }
 
-export default Rating
