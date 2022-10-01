@@ -1,19 +1,14 @@
-import React from 'react';
+import React from "react";
 
-type PropsType = {
-    selected: boolean
-    callback: () => void
-}
+type StarPropsType = {
+  selected: boolean;
+  callback: () => void;
+};
 
-const Star = (props: PropsType) => {
-    const {selected, callback} = props
+const Star = (props: StarPropsType) => {
+  const { selected, callback } = props;
 
-    return (
-        <span onClick={callback}>
-        {selected ? <b>star </b> : ' star '}
-    </span>
-    )
+  return <span onClick={callback}>{selected ? <b>star </b> : " star "}</span>;
+};
 
-}
-
-export default Star
+export default Star;

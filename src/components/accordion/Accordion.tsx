@@ -1,28 +1,33 @@
-import React, {useState} from 'react';
-import AccordionTitle from './accordionTitle/AccordionTitle';
-import AccordionBody from './accordionBody/AccordionBody';
+import React, { useState } from "react";
+import AccordionTitle from "./accordionTitle/AccordionTitle";
+import AccordionBody from "./accordionBody/AccordionBody";
 
 export type AccordionPropsType = {
-    title: string
-}
-
+  title: string;
+};
 
 const Accordion = (props: AccordionPropsType) => {
-    const {title} = props
+  const { title } = props;
 
-    const [collapsed, setCollapsed] = useState(true)
+  const [collapsed, setCollapsed] = useState(true);
 
-    const toggleMenu = (collapsed: boolean) => {
-        setCollapsed(!collapsed)
-    }
+  const toggleMenu = () => {
+    setCollapsed((prevState) => !prevState);
+  };
 
-    return (
-        <div>
-            <AccordionTitle callback={()=> {toggleMenu(collapsed)}} title={title}/>
+  return (
+    <div>
+      <AccordionTitle
+        callback={() => {
+          toggleMenu();
+        }}
+        color={"blue"}
+        title={title}
+      />
 
-            {!collapsed && <AccordionBody/>}
-        </div>
-    )
-}
+      {!collapsed && <AccordionBody />}
+    </div>
+  );
+};
 
-export default Accordion
+export default Accordion;
