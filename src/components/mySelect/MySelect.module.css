@@ -1,0 +1,63 @@
+.my__select__wrapper {
+    position: relative;
+    max-width: 100px;
+    margin-bottom: 30px;
+}
+
+.my__select {
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.my__select__title {
+    margin: 0;
+    padding: 0;
+}
+
+.my__select__options_invisible {
+    padding: 20px;
+    box-sizing: border-box;
+    position: absolute;
+    top: -55%;
+    width: 100%;
+    transform: scale(0);
+    background: red;
+    transition: 2s;
+}
+
+.my__select__options_displayed {
+    padding: 20px;
+    box-sizing: border-box;
+    position: absolute;
+    top: -50%;
+    width: 100%;
+    display: block;
+    transform: scale(1);
+
+    transition: 1s;
+    background: red;
+}
+
+.tick__svg {
+    height: 10px;
+    width: 10px;
+}
+
+.my__select__item {
+    cursor: pointer;
+}
+
+.my__select__item:hover,
+.my__select__item:active,
+.my__select__item:focus{
+    color: white;
+    transition: 1s;
+    cursor: pointer;
+}
+
+.my__select__item.selected {
+    background: white;
+    font-size: 25px;
+}

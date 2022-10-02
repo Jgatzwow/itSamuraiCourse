@@ -36,16 +36,34 @@ const Template: ComponentStory<typeof ControlledAccordion> = (args) => (
 
 export const MenuCollapsedMode = Template.bind({});
 MenuCollapsedMode.args = {
-  title: "Menu",
+  title: "Users",
   collapsed: true,
+  items: [
+    { title: "Michael", value: 1 },
+    { title: "Roma", value: 2 },
+    {
+      title: "Igor",
+      value: 3,
+    },
+  ],
   toggleMenu: callback,
+  onClick: onClickCallback,
 };
 
 export const MenuNotCollapsedMode = Template.bind({});
 MenuNotCollapsedMode.args = {
-  title: "Menu",
+  title: "Users",
+  items: [
+    { title: "Michael", value: 1 },
+    { title: "Roma", value: 2 },
+    {
+      title: "Igor",
+      value: 3,
+    },
+  ],
   collapsed: false,
   toggleMenu: callback,
+  onClick: onClickCallback,
 };
 
 export const ChangingMode: ComponentStory<typeof ControlledAccordion> = (
@@ -61,6 +79,15 @@ export const ChangingMode: ComponentStory<typeof ControlledAccordion> = (
   );
 };
 ChangingMode.args = {
-  title: "Menu",
+  title: "Users",
+  items: [
+    { title: "Michael", value: 1 },
+    { title: "Roma", value: 2 },
+    {
+      title: "Igor",
+      value: 3,
+    },
+  ],
   toggleMenu: callback,
+  onClick: onClickCallback,
 };

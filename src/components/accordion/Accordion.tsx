@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import AccordionTitle from "./accordionTitle/AccordionTitle";
 import AccordionBody from "./accordionBody/AccordionBody";
+import { ItemType } from "../../App";
 
 export type AccordionPropsType = {
   title: string;
+  items: ItemType[];
+  onCLick: (val: any) => void;
 };
 
 const Accordion = (props: AccordionPropsType) => {
-  const { title } = props;
+  const { title, items, onCLick } = props;
 
   const [collapsed, setCollapsed] = useState(true);
 
@@ -25,7 +28,7 @@ const Accordion = (props: AccordionPropsType) => {
         title={title}
       />
 
-      {!collapsed && <AccordionBody />}
+      {!collapsed && <AccordionBody onClick={onCLick} items={items} />}
     </div>
   );
 };

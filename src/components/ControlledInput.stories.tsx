@@ -12,7 +12,6 @@ export default {
 } as ComponentMeta<typeof ControlledInput>;
 
 const callback = action("ControlledInput mode change event fired");
-const onClickCallback = action("some item has been clicked");
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof ControlledInput> = (args) => (
