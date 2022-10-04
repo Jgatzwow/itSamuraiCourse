@@ -86,7 +86,7 @@ const MemoedControlledOnOff = React.memo(ControlledOnOff);
 const MemoedRating = React.memo(Rating);
 const MemoedControlledRating = React.memo(ControlledRating);
 const MemoedAccordion = React.memo(Accordion, () => true);
-const MemoedControlledAccordion = React.memo(ControlledAccordion, () => true);
+const MemoedControlledAccordion = React.memo(ControlledAccordion);
 const MemoedMySelect = React.memo(MySelect, () => true);
 const MemoedControlledSelect = React.memo(ControlledSelect);
 const MemoedControlledInput = React.memo(ControlledInput);
