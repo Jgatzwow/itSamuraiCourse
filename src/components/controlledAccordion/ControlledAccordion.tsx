@@ -14,7 +14,7 @@ type ControlledAccordionPropsType = {
 
 const ControlledAccordion = (props: ControlledAccordionPropsType) => {
   const { title, collapsed, toggleMenu, color, items, onClick } = props;
-
+  console.log("ControlledAccordion");
   return (
     <div>
       <AccordionTitle

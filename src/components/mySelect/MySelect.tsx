@@ -11,7 +11,9 @@ type PropsType = {
 
 export const MySelect: React.FC<PropsType> = (props) => {
   const { mySelValue, setMySelValue, selectOptions } = props;
+  console.log("my select");
   const [selectMode, setSelectMode] = useState(false);
+
   const onSetSelectModeChange = () => {
     setSelectMode((prevState) => !prevState);
   };
@@ -50,7 +52,7 @@ export const MySelect: React.FC<PropsType> = (props) => {
       <h4 className={styles.my__select__title}>Select user:</h4>
       <div onClick={onSetSelectModeChange} className={styles.my__select}>
         {mySelValue}
-        <img className={styles.tick__svg} src={tickSvg} />
+        <img className={styles.tick__svg} alt={"some img"} src={tickSvg} />
       </div>
       {mappedOptionsForMySelect}
     </div>

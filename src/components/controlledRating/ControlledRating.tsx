@@ -8,7 +8,7 @@ type PropsType = {
 
 export const ControlledRating: React.FC<PropsType> = (props) => {
   const { value, onClick } = props;
-
+  console.log("ControlledRating");
   return (
     <div>
       <Star callback={onClick} selected={value > 0} value={1} />

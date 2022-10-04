@@ -41,27 +41,27 @@ const App = () => {
   const [mySelValue, setMySelValue] = useState("It-Samurai");
   return (
     <div className="App">
-      <MySelect
+      <MemoedMySelect
         mySelValue={mySelValue}
         setMySelValue={setMySelValue}
         selectOptions={initialAccordionState}
       />
-      <ControlledSelect
+      <MemoedControlledSelect
         selectVal={selectValue}
         setSelectValue={setSelectValue}
       />
-      <ControlledInput value={inputValue} setInputValue={setInputValue} />
-      <ControlledCheckBox checked={checked} callback={setChecked} />
-      <PageTitle title={"This is APP component"} />
-      <PageTitle title={"My Friends"} />
-      <OnOff />
-      <ControlledOnOff on={on} setOn={setOn} />
-      <Accordion
+      <MemoedControlledInput value={inputValue} setInputValue={setInputValue} />
+      <MemoedControlledCheckBox checked={checked} callback={setChecked} />
+      <MemoedPageTitle title={"This is APP component"} />
+      <MemoedPageTitle title={"My Friends"} />
+      <MemoedOnOFF />
+      <MemoedControlledOnOff on={on} setOn={setOn} />
+      <MemoedAccordion
         onCLick={onAccordionItemClick}
         items={initialAccordionState}
         title={"Accordion Title"}
       />
-      <ControlledAccordion
+      <MemoedControlledAccordion
         onClick={onAccordionItemClick}
         items={initialAccordionState}
         color={"blue"}
@@ -69,8 +69,8 @@ const App = () => {
         toggleMenu={toggleMenu}
         title={"ControlledAccordion Title"}
       />
-      <ControlledRating value={ratingValue} onClick={setRatingValue} />
-      <Rating />
+      <MemoedControlledRating value={ratingValue} onClick={setRatingValue} />
+      <MemoedRating />
     </div>
   );
 };
@@ -80,3 +80,14 @@ export default App;
 const PageTitle = (props: any) => {
   return <h1>{props.title}</h1>;
 };
+const MemoedPageTitle = React.memo(PageTitle);
+const MemoedOnOFF = React.memo(OnOff);
+const MemoedControlledOnOff = React.memo(ControlledOnOff);
+const MemoedRating = React.memo(Rating);
+const MemoedControlledRating = React.memo(ControlledRating);
+const MemoedAccordion = React.memo(Accordion);
+const MemoedControlledAccordion = React.memo(ControlledAccordion);
+const MemoedMySelect = React.memo(MySelect);
+const MemoedControlledSelect = React.memo(ControlledSelect);
+const MemoedControlledInput = React.memo(ControlledInput);
+const MemoedControlledCheckBox = React.memo(ControlledCheckBox);
