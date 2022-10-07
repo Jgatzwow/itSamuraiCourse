@@ -10,6 +10,9 @@ import { ControlledInput } from "./components/ControlledInput";
 import { ControlledCheckBox } from "./components/ControlledCheckBox";
 import { ControlledSelect } from "./components/ControlledSelect";
 import { MySelect } from "./components/mySelect/MySelect";
+import { Sample1 } from "./components/UseMemoSample/Sample1";
+import { Sample2 } from "./components/UseMemoSample/Sample2";
+import { Sample3 } from "./components/UseMemoSample/Sample3";
 
 export type RatingValueType = 0 | 1 | 2 | 3 | 4 | 5;
 export type ItemType = {
@@ -41,6 +44,12 @@ const App = () => {
   const [mySelValue, setMySelValue] = useState("It-Samurai");
   return (
     <div className="App">
+      <Sample1 />
+      <hr />
+      <Sample2 />
+      <hr />
+      <Sample3 />
+      <hr />
       <MemoedMySelect
         mySelValue={mySelValue}
         setMySelValue={setMySelValue}
